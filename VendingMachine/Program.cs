@@ -10,8 +10,15 @@
             myMachine.Inventory.Add(new Product(2, "KitKat", 1.20m, 10));
             myMachine.Inventory.Add(new Product(3, "Eau Minérale", 0.80m, 20));
 
-            Console.WriteLine("Initialisation terminée.");
-            Console.WriteLine($"La machine contient {myMachine.Inventory.Count} types de produits.");
+            Console.WriteLine("Bonjour ! Voici les produits disponibles :");
+            Console.WriteLine("------------------------------------------");
+
+            foreach (Product p in myMachine.Inventory)
+            {
+                Console.WriteLine($"[{p.Id}] {p.Name} \t: {p.Price} euros");
+            }
+
+            Console.WriteLine("------------------------------------------");
 
             Console.ReadLine();
         }
