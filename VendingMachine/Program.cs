@@ -1,2 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace VendingMachine
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            VendingMachine myMachine = new VendingMachine();
+
+            myMachine.Inventory.Add(new Product(1, "Coca-Cola", 1.50m, 5));
+            myMachine.Inventory.Add(new Product(2, "KitKat", 1.20m, 10));
+            myMachine.Inventory.Add(new Product(3, "Eau Minérale", 0.80m, 20));
+
+            Console.WriteLine("Initialisation terminée.");
+            Console.WriteLine($"La machine contient {myMachine.Inventory.Count} types de produits.");
+
+            Console.ReadLine();
+        }
+    }
+}
