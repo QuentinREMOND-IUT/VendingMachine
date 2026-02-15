@@ -21,7 +21,7 @@ namespace VendingMachine
         // Méthode pour ajouter de l'argent
         public void InsertMoney(decimal amount)
         {
-            // Plus tard
+            this.Balance += amount;
         }
 
         // Méthode pour acheter un produit
@@ -34,8 +34,9 @@ namespace VendingMachine
         // Méthode pour rendre la monnaie
         public decimal ReturnChange()
         {
-            // Plus tard
-            return 0;
+            decimal amountToReturn = this.Balance;
+            this.Balance = 0;
+            return amountToReturn;
         }
     }
 }
