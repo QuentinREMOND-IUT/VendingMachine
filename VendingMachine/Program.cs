@@ -21,6 +21,18 @@
             Console.WriteLine("------------------------------------------");
 
             Console.ReadLine();
+
+            Console.WriteLine("\n--- Test d'achat ---");
+
+            myMachine.InsertMoney(2.00m);
+            Console.WriteLine("Argent inséré : 2.00 euros");
+
+            string resultat = myMachine.BuyProduct(1);
+            Console.WriteLine(resultat);
+
+            Console.WriteLine($"Monnaie restante : {myMachine.ReturnChange()} euros");
+
+            Console.ReadLine();
         }
     }
 }
