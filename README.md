@@ -1,50 +1,59 @@
 # 🥤 Vending Machine Simulator (C# Console)
 
-Une application console en C# simulant le fonctionnement complet d'un distributeur automatique. 
-Ce projet a été réalisé pour mettre en pratique les principes de la **Programmation Orientée Objet (POO)** et la logique algorithmique en .NET.
+A robust console application simulating the workflow of a real-world Vending Machine.
+This project was built to demonstrate core **Object-Oriented Programming (OOP)** principles and algorithmic logic using C# and .NET.
 
-## 🚀 Fonctionnalités
+## 🚀 Features
 
-L'application permet à l'utilisateur de simuler un cycle d'achat complet :
+The application provides a fully interactive command-line interface (CLI) with the following capabilities:
 
-* **Consultation des produits :** Affichage dynamique de l'inventaire (Nom, Prix, Stock restant).
-* **Gestion du porte-monnaie :** Insertion d'argent (crédit) et cumul du solde.
-* **Achat de produits :** * Vérification du stock disponible.
-    * Vérification du solde suffisant.
-    * Mise à jour automatique des stocks et du solde après achat.
-* **Rendu de monnaie :** Calcul et restitution du solde restant.
-* **Boucle interactive :** Interface console persistante avec menu de navigation.
+* **Dynamic Inventory Display:** View real-time stock levels, prices, and product IDs.
+* **Balance Management:** Users can insert credits and accumulate a balance.
+* **Transaction Logic:**
+    * Validates product existence (ID checks).
+    * Checks for sufficient funds.
+    * Ensures stock availability before processing.
+* **State Management:** Automatically updates stock and user balance upon successful transaction.
+* **Change System:** Calculates and returns the remaining balance to the user.
 
-## 🛠️ Compétences Techniques Mises en Œuvre
+## 🛠️ Technical Highlights
 
-Ce projet démontre la maîtrise des concepts suivants en C# :
+This project serves as a practical example of my C# skills, specifically focusing on:
 
-* **Programmation Orientée Objet (POO) :**
-    * Création de classes (`Product`, `VendingMachine`).
-    * Encapsulation des données.
-    * Manipulation d'objets et d'instances.
-* **Structures de Données :** Utilisation de `List<T>` pour gérer l'inventaire.
-* **Logique Algorithmique :** * Boucles (`foreach`, `while`).
-    * Conditions (`if/else`, `switch`).
-    * Recherche dans une liste (LINQ / Lambda expressions).
-* **Précision Financière :** Utilisation du type `decimal` pour garantir la précision des calculs monétaires.
+* **Object-Oriented Design (OOP):**
+    * **Encapsulation:** Data protection within `VendingMachine` and `Product` classes.
+    * **Separation of Concerns:** Logic is separated from the UI (`Program.cs` handles inputs, `VendingMachine.cs` handles logic).
+* **C# Language Features:**
+    * **LINQ:** Used `Inventory.Find(p => ...)` for efficient product lookup.
+    * **Collections:** `List<T>` for dynamic inventory management.
+    * **Data Types:** Usage of `decimal` for financial precision (avoiding floating-point errors).
+* **Control Flow:**
+    * Implementation of `switch` cases for menu navigation.
+    * `while` loops for continuous application runtime.
+    * Input parsing and validation.
 
-## 📂 Structure du Code
+## 📂 Project Structure
 
-* `Program.cs` : Point d'entrée de l'application. Gère l'interface utilisateur (UI) et la boucle principale.
-* `VendingMachine.cs` : Contient la logique métier (méthodes `BuyProduct`, `InsertMoney`, `ReturnChange`).
-* `Product.cs` : Définit le modèle de données d'un article (ID, Nom, Prix, Stock).
+* `Program.cs`: The entry point. Handles the **User Interface (UI)** and the main event loop.
+* `VendingMachine.cs`: The **Logic Layer**. Manages the inventory state, balance, and transaction rules.
+* `Product.cs`: The **Data Model**. Defines the properties of an item (ID, Name, Price, Stock).
 
-## 🔧 Comment Lancer le Projet
+## 🔧 Getting Started
 
-1.  **Cloner le dépôt :**
+### Prerequisites
+* .NET SDK (6.0, 7.0, or 8.0)
+* Visual Studio or VS Code
+
+### Installation
+
+1.  **Clone the repository:**
     ```bash
     git clone [https://github.com/QuentinREMOND-IUT/VendingMachine.git](https://github.com/QuentinREMOND-IUT/VendingMachine.git)
     ```
-2.  **Ouvrir le projet :**
-    * Ouvrez le fichier `.sln` ou le dossier avec **Visual Studio** (ou VS Code).
-3.  **Exécuter :**
-    * Appuyez sur `F5` ou cliquez sur le bouton "Démarrer" pour lancer la console.
+2.  **Open the project:**
+    Open the `.sln` file in Visual Studio.
+3.  **Run:**
+    Press `F5` or run `dotnet run` in the terminal.
 
 ---
-*Projet réalisé dans le cadre d'un portfolio pour une recherche d'alternance en développement C# / .NET.*
+*Created as part of a technical portfolio for a Work-Study (Alternance) application in Software Development.*
