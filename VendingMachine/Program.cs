@@ -22,12 +22,12 @@
                 // 2. On affiche l'inventaire
                 foreach (Product p in myMachine.Inventory)
                 {
-                    Console.WriteLine($"[{p.Id}] {p.Name} \t: {p.Price} € \t(Stock: {p.Stock})");
+                    Console.WriteLine($"[{p.Id}] {p.Name} \t: {p.Price} euros \t(Stock: {p.Stock})");
                 }
                 Console.WriteLine("-----------------------------");
 
                 // 3. On affiche le solde actuel et le menu
-                Console.WriteLine($"SOLDE ACTUEL : {myMachine.Balance} €");
+                Console.WriteLine($"SOLDE ACTUEL : {myMachine.Balance} euros");
                 Console.WriteLine("\nQue voulez-vous faire ?");
                 Console.WriteLine("1. Insérer de l'argent");
                 Console.WriteLine("2. Acheter un produit");
@@ -36,20 +36,28 @@
 
                 // 4. On récupère le choix de l'utilisateur
                 Console.Write("Votre choix : ");
-                string choix = Console.ReadLine().ToUpper();
+                string choix = (Console.ReadLine() ?? "").ToUpper();
 
                 // 5. On traite le choix avec un Switch
                 switch (choix)
                 {
                     case "1":
                         Console.Write("Montant à insérer : ");
-                        decimal montant = decimal.Parse(Console.ReadLine());
+                        if (!decimal.TryParse(Console.ReadLine(), out decimal montant))
+                        {
+                            Console.WriteLine("Montant invalide, veuillez entrer un nombre.");
+                            break;
+                        }
                         myMachine.InsertMoney(montant);
                         break;
 
                     case "2":
                         Console.Write("Indiquez l'ID du produit : ");
-                        int idProduit = int.Parse(Console.ReadLine());
+                        if (!int.TryParse(Console.ReadLine(), out int idProduit))
+                        {
+                            Console.WriteLine("ID invalide, veuillez entrer un nombre entier.");
+                            break;
+                        }
                         string resultat = myMachine.BuyProduct(idProduit);
                         Console.WriteLine(resultat);
 

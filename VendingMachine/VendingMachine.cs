@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VendingMachine
 {
@@ -49,7 +47,7 @@ namespace VendingMachine
             }
 
             // 5. On procède à l'achat
-            productToBuy.Stock--;
+            productToBuy.DecrementStock();
             this.Balance -= productToBuy.Price;
 
             return $"SUCCÈS : Voici votre {productToBuy.Name}.";
