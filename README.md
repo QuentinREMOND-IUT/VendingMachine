@@ -21,12 +21,13 @@ The application provides a fully interactive command-line interface (CLI) with t
 This project serves as a practical example of my C# skills, specifically focusing on:
 
 * **Object-Oriented Design (OOP):**
-    * **Encapsulation:** Data protection within `VendingMachine` and `Product` classes.
+    * **Encapsulation:** All `Product` properties use `private set` to prevent external modification. Stock updates are handled exclusively through `DecrementStock()`, enforcing controlled state changes.
     * **Separation of Concerns:** Logic is separated from the UI (`Program.cs` handles inputs, `VendingMachine.cs` handles logic).
 * **C# Language Features:**
     * **LINQ:** Used `Inventory.Find(p => ...)` for efficient product lookup.
     * **Collections:** `List<T>` for dynamic inventory management.
     * **Data Types:** Usage of `decimal` for financial precision (avoiding floating-point errors).
+    * **Input Validation:** `TryParse` used for all user inputs to handle invalid entries gracefully without exceptions.
 * **Control Flow:**
     * Implementation of `switch` cases for menu navigation.
     * `while` loops for continuous application runtime.
@@ -36,7 +37,7 @@ This project serves as a practical example of my C# skills, specifically focusin
 
 * `Program.cs`: The entry point. Handles the **User Interface (UI)** and the main event loop.
 * `VendingMachine.cs`: The **Logic Layer**. Manages the inventory state, balance, and transaction rules.
-* `Product.cs`: The **Data Model**. Defines the properties of an item (ID, Name, Price, Stock).
+* `Product.cs`: The Data Model. Defines the properties of an item (ID, Name, Price, Stock) with encapsulated state management via `DecrementStock()`.
 
 ## 🔧 Getting Started
 
